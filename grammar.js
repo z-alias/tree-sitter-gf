@@ -6,20 +6,37 @@ const basic = require('./basic.js')
 module.exports = grammar({
   name: "gf",
 
-  extras: $ => [/[\s\n\t]/],
+  extras: $ => [
+    $.comment,
+    /[\s\n\t]/
+  ],
 
   rules: {
     source_file: $ => ($.mod_def),
+    comment: _ => token(choice(
 
-    ident: _ => /[a-zA-Z_']+/,
+      prec(100, seq('--', /.*/)),
+      seq('{--}'),
+      seq(
+        '{-',
+        /[^#]/,
+        repeat(choice(
+          /[^-]/, // anything but -
+          /-[^}]/, // - not followed by }
+        )),
+        /-}/,
+      ),
+    )),
+
+
+    ident: _ => /[a-zA-Z_'0-9]+/,
     double: $ => $.float,
 
     mod_def: $ => seq($.compl_mod, $._mod_type, '=', $.mod_body),
 
-    mod_header: $ => seq($.compl_mod, $._mod_type, '=', optional($.mod_header_body)),
+    mod_header: $ => seq(optional($.compl_mod), $._mod_type, '=', optional($.mod_header_body)),
 
     compl_mod: $ => choice(
-      alias('', $.ms_complete),
       alias('incomplete', $.ms_incomplete)
     ),
 
@@ -63,7 +80,7 @@ module.exports = grammar({
 
     list_top_def: $ => seq($._top_def, optional($.list_top_def)),
 
-    list_open: $ => seq(optional($._open), ',', $.list_open),
+    list_open: $ => seq($._open, optional(seq(',', $.list_open))),
 
     _open: $ => choice(
       $.o_simple,
