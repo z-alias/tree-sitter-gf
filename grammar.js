@@ -124,30 +124,30 @@ module.exports = grammar({
       seq('[', $.ident, optional($.list_d_decl), ']', '{', $.integer, '}'),
     ),
 
-    fun_def: $ => seq($.list_ident, ':', $.exp),
+    fun_def: $ => seq($.list_ident, ':', $._exp),
 
-    def_def: $ => seq($.lhs_name, optional($.list_patt), '=', $.exp),
+    def_def: $ => seq($.lhs_name, optional($.list_patt), '=', $._exp),
 
     data_def: $ => choice(
       seq($.ident, '=', $.list_data_constr),
-      seq($.list_ident, ':', $.exp)
+      seq($.list_ident, ':', $._exp)
     ),
 
     param_def: $ => seq($.lhs_ident, optional(seq('=', $.list_par_constr))),
 
     oper_def: $ => choice(
-      seq($.lhs_names, ':', $.exp),
-      seq($.lhs_names, '=', $.exp),
-      seq($.lhs_name, $.list_arg, '=', $.exp),
-      seq($.lhs_names, ':', $.exp, '=', $.exp)
+      seq($.lhs_names, ':', $._exp),
+      seq($.lhs_names, '=', $._exp),
+      seq($.lhs_name, $.list_arg, '=', $._exp),
+      seq($.lhs_names, ':', $._exp, '=', $._exp)
     ),
 
     lin_def: $ => choice(
-      seq($.lhs_names, '=', $.exp),
-      seq($.lhs_name, $.list_arg, '=', $.exp)
+      seq($.lhs_names, '=', $._exp),
+      seq($.lhs_name, $.list_arg, '=', $._exp)
     ),
 
-    term_def: $ => seq($.lhs_names, '=', $.exp),
+    term_def: $ => seq($.lhs_names, '=', $._exp),
 
     flag_def: $ => seq($.ident, '=', choice($.ident, $.double)),
 
@@ -192,89 +192,126 @@ module.exports = grammar({
     lhs_names: $ => seq($.lhs_name, optional(seq(',', $.lhs_names))),
 
     loc_def: $ => choice(
-      seq(field('names', $.list_ident), ':', field('type', $.exp)),
-      seq($.list_ident, '=', $.exp),
-      seq(field('names', $.list_ident), ':', field('type', $.exp), '=', field('value', $.exp))
+      seq($.list_ident, ':', $._exp),
+      seq($.list_ident, '=', $._exp),
+      seq($.list_ident, ':', $._exp, '=', $._exp)
     ),
 
     list_loc_def: $ => seq($.loc_def, optional(seq(';', optional($.list_loc_def)))),
 
-    exp: $ => choice(
-      seq($._exp1, '|', $.exp),
-      seq('\\', $.list_bind, '->', $.exp),
-      seq('\\\\', $.list_bind, '=>', $.exp),
-      seq($.decl, '->', $.exp),
-      seq($._exp3, '=>', $.exp),
-      seq('let', '{', optional($.list_loc_def), '}', 'in', $.exp),
-      seq('let', optional($.list_loc_def), 'in', $.exp),
-      seq($._exp3, 'where', '{', optional($.list_loc_def), '}'),
-      seq('in', $._exp5, $.string),
+    _exp: $ => choice(
+      $.term_fv,
+      $.term_abs,
+      $.term_c_table,
+      $.term_prod,
+      $.term_table,
+      $.term_let,
+      $.term_example,
       $._exp1
     ),
+    term_fv: $ => choice(
+      seq($._exp1, '|', $._exp),
+      seq('variants', '{', optional($.list_exp), '}')
+    ),
+    term_abs: $ => seq('\\', $.list_bind, '->', $._exp),
+    term_c_table: $ => seq('\\\\', $.list_bind, '=>', $._exp),
+    term_prod: $ => seq($.decl, '->', $._exp),
+    term_table: $ => seq($._exp3, '=>', $._exp),
+    term_let: $ => choice(
+      seq('let', '{', optional($.list_loc_def), '}', 'in', $._exp),
+      seq('let', optional($.list_loc_def), 'in', $._exp),
+      seq($._exp3, 'where', '{', optional($.list_loc_def), '}')
+    ),
+    term_example: $ => seq('in', $._exp5, $.string),
 
-    _exp1: $ => seq($._exp2, optional(seq('++', $._exp1))),
+    _exp1: $ => choice(
+      $.term_c,
+      $._exp2
+    ), 
+    term_c: $ => seq($._exp2, '++', $._exp1),
 
-    _exp2: $ => seq($._exp3, optional(seq('+', $._exp2))),
+    _exp2: $ => choice(
+      $.term_glue,
+      $._exp3
+    ), 
+    term_glue: $ => seq($._exp3, '+', $._exp2),
 
     _exp3: $ => choice(
-      seq($._exp3, '!', $._exp4),
-      seq('table', '{', $.list_case, '}'),
-      seq('table', $._exp6, '{', $.list_case, '}'),
-      seq('table', $._exp6, '[', optional($.list_exp), ']'),
-      seq($._exp3, choice('*', '**'), $._exp4),
-      seq($._exp3, '**', '{', $.list_case, '}'),
+      $.term_s,
+      $.term_t,
+      $.term_v,
+      $.term_rec_type,
       $._exp4
     ),
+    term_s: $ => choice(
+      seq($._exp3, '!', $._exp4),
+      seq('case', $._exp, 'of', '{', $.list_case, '}'), // this may not be quite right
+    ),
+    term_t: $ => choice(
+      seq('table', alias('', $.t_info_t_raw), '{', $.list_case, '}'),
+      seq('table', alias($._exp6, $.t_info_t_typed), '{', $.list_case, '}'),
+      seq($._exp3, '**', alias('', $.t_info_t_raw), '{', $.list_case, '}') // careful where you put those empty aliases; sometimes everything breaks
+    ),
+    term_v: $ => seq('table', $._exp6, '[', optional($.list_exp), ']'),
+    term_rec_type: $ => seq($._exp3, '*', $._exp4),
+    term_ext_r: $ => seq($._exp3, '**', $._exp4),
 
     _exp4: $ => choice(
-      seq(alias($._exp4, $.exp_appl_subj), alias($._exp5, $.exp_appl_obj)),
-      seq($._exp4, '{', $.exp, '}'),
-      seq('case', $.exp, 'of', '{', $.list_case, '}'),
-      seq('variants', '{', optional($.list_exp), '}'),
-      seq(
-        'pre', 
-        '{', 
-        choice(
-          $.list_case, 
-          seq($.string, ';', $.list_altern), 
-          seq($.ident, ';', $.list_altern)
-        ),
-        '}'
-      ),
-      seq('strs', '{', optional($.list_exp), '}'),
-      seq('#', $._patt3),
-      seq('pattern', $._exp5),
-      seq('lincat', $.ident, $._exp5),
-      seq('lin', $.ident, $._exp5),
+      $.term_app,
+      $.term_alts,
+      $.term_strs,
+      $.term_e_patt,
+      $.term_e_patt_type,
+      $.term_e_lincat,
+      $.term_e_lin,
       $._exp5
     ),
+    term_app: $ => choice(
+      seq($._exp4, $._exp5),
+      seq($._exp4, '{', alias($._exp, $.term_impl_arg), '}'),
+      seq('[', $.ident, optional($.exps), ']')
+    ),
+    term_alts: $ => choice(
+      seq('pre', '{', $.list_case, '}'),
+      seq('pre', '{', seq(alias($.string, $.term_k), ';', $.list_altern), '}'),
+      seq('pre', '{', seq(alias($.ident, $.term_vr), ';', $.list_altern), '}'),
+    ),
+    term_strs: $ => seq('strs', '{', optional($.list_exp), '}'),
+    term_e_patt: $ => seq('#', $._patt3),
+    term_e_patt_type: $ => seq('pattern', $._exp5),
+    term_e_lincat: $ => seq('lincat', $.ident, $._exp5),
+    term_e_lin: $ => seq('lin', $.ident, $._exp5),
 
     _exp5: $ => choice(
-      seq($._exp5, '.', $.label),
+      $.term_p,
       $._exp6
     ),
+    term_p: $ => seq($._exp5, '.', $.label),
 
     _exp6: $ => choice(
-      alias($.ident, $.exp_ident),
-      $.sort,
-      $.string,
-      $.integer,
-      $.double,
-      '?',
-      seq('[', ']'),
-      seq('[', $.ident, optional($.exps), ']'),
-      seq('[', $.string, ']'),
-      seq('{', optional($.list_loc_def), '}'),
-      seq('<', optional($.list_tuple_comp), '>'),
-      seq('<', $.exp, ':', $.exp, '>'),
-      seq('(', $.exp, ')')
+      alias($.ident, $.term_vr),
+      alias($.sort, $.term_sort),
+      alias($.string, $.term_k),
+      alias($.integer, $.term_e_int),
+      alias($.double, $.term_e_float),
+      alias('?', $.term_meta),
+      $.term_empty,
+      // $.term_app,
+      seq('[', alias($.string, $.term_k), ']'),
+      seq('{', optional(alias($.list_loc_def, $.term_r)), '}'),
+      seq('<', optional(alias($.list_tuple_comp, $.term_r)), '>'),
+      seq('(', alias($._exp, $.term_typed), ')')
     ),
+    term_empty: $ => seq('[', ']'),
+    term_typed: $ => seq('<', $._exp, ':', $._exp, '>'),
 
-    list_exp: $ => seq($.exp, optional(seq(';', optional($.list_exp)))),
+    list_exp: $ => seq($._exp, optional(seq(';', optional($.list_exp)))),
 
     exps: $ => seq($._exp6, optional($.exps)),
 
-    patt: $ => seq(optional(seq($.patt, choice('|', '+'))), $._patt1),
+    patt: $ => choice($.p_alt, $.p_seq, $._patt1),
+    p_alt: $ => seq($.patt, '|', $._patt1),
+    p_seq: $ => seq($.patt, '+', $._patt1),
 
     _patt1: $ => choice(
       seq($.ident, $.list_patt),
@@ -341,24 +378,24 @@ module.exports = grammar({
     list_bind: $ => seq($.bind, optional(seq(',', $.list_bind))),
 
     decl: $ => choice(
-      seq('(', $.list_bind, ':', $.exp, ')'),
+      seq('(', $.list_bind, ':', $._exp, ')'),
       $._exp3
     ),
 
-    list_tuple_comp: $ => seq($.exp, optional(seq(',', optional($.list_tuple_comp)))),
+    list_tuple_comp: $ => seq($._exp, optional(seq(',', optional($.list_tuple_comp)))),
 
     list_patt_tuple_comp: $ => seq($.patt, optional(seq(',', optional($.list_patt_tuple_comp)))),
     
-    case: $ => seq($.patt, '=>', $.exp),
+    case: $ => seq($.patt, '=>', $._exp),
 
     list_case: $ => seq($.case, optional(seq(';', $.list_case))),
 
-    altern: $ => seq($.exp, '/', $.exp),
+    altern: $ => seq($._exp, '/', $._exp),
 
     list_altern: $ => seq($.altern, optional(seq(';', $.list_altern))),
 
     d_decl: $ => choice(
-      seq('(', $.list_bind, ':', $.exp, ')'),
+      seq('(', $.list_bind, ':', $._exp, ')'),
       $._exp6
     ),
 
@@ -407,6 +444,8 @@ module.exports = grammar({
     ),
 
     ...basic,
+
+
   }
   // rules: {
   //   program: $ => repeat(choice(
