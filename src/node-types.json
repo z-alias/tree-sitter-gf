@@ -1,0 +1,2338 @@
+[
+  {
+    "type": "altern",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "exp",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "arg",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": false,
+      "types": [
+        {
+          "type": "ident",
+          "named": true
+        },
+        {
+          "type": "list_ident2",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "bind",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": false,
+      "types": [
+        {
+          "type": "ident",
+          "named": true
+        },
+        {
+          "type": "list_ident",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "case",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "exp",
+          "named": true
+        },
+        {
+          "type": "patt",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "cat_def",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "ident",
+          "named": true
+        },
+        {
+          "type": "integer",
+          "named": true
+        },
+        {
+          "type": "list_d_decl",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "cf_rule",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "ident",
+          "named": true
+        },
+        {
+          "type": "integer",
+          "named": true
+        },
+        {
+          "type": "list_cf_symbol",
+          "named": true
+        },
+        {
+          "type": "list_cfrhs",
+          "named": true
+        },
+        {
+          "type": "non_empty",
+          "named": true
+        },
+        {
+          "type": "string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "cf_symbol",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "ident",
+          "named": true
+        },
+        {
+          "type": "string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "compl_mod",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "ms_complete",
+          "named": true
+        },
+        {
+          "type": "ms_incomplete",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "d_decl",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "exp",
+          "named": true
+        },
+        {
+          "type": "exp6",
+          "named": true
+        },
+        {
+          "type": "list_bind",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "data_def",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "exp",
+          "named": true
+        },
+        {
+          "type": "ident",
+          "named": true
+        },
+        {
+          "type": "list_data_constr",
+          "named": true
+        },
+        {
+          "type": "list_ident",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "decl",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "exp",
+          "named": true
+        },
+        {
+          "type": "exp3",
+          "named": true
+        },
+        {
+          "type": "list_bind",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "def_def",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "exp",
+          "named": true
+        },
+        {
+          "type": "lhs_name",
+          "named": true
+        },
+        {
+          "type": "list_patt",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "double",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "float",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "ebnf_rule",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "erhs0",
+          "named": true
+        },
+        {
+          "type": "ident",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "erhs0",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "erhs0",
+          "named": true
+        },
+        {
+          "type": "erhs1",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "erhs1",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "erhs1",
+          "named": true
+        },
+        {
+          "type": "erhs2",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "erhs2",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "erhs3",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "erhs3",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "erhs0",
+          "named": true
+        },
+        {
+          "type": "ident",
+          "named": true
+        },
+        {
+          "type": "string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "exp",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "decl",
+          "named": true
+        },
+        {
+          "type": "exp",
+          "named": true
+        },
+        {
+          "type": "exp1",
+          "named": true
+        },
+        {
+          "type": "exp3",
+          "named": true
+        },
+        {
+          "type": "exp5",
+          "named": true
+        },
+        {
+          "type": "list_bind",
+          "named": true
+        },
+        {
+          "type": "list_loc_def",
+          "named": true
+        },
+        {
+          "type": "string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "exp1",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "exp1",
+          "named": true
+        },
+        {
+          "type": "exp2",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "exp2",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "exp2",
+          "named": true
+        },
+        {
+          "type": "exp3",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "exp3",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "exp3",
+          "named": true
+        },
+        {
+          "type": "exp4",
+          "named": true
+        },
+        {
+          "type": "exp6",
+          "named": true
+        },
+        {
+          "type": "list_case",
+          "named": true
+        },
+        {
+          "type": "list_exp",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "exp4",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "exp",
+          "named": true
+        },
+        {
+          "type": "exp4",
+          "named": true
+        },
+        {
+          "type": "exp5",
+          "named": true
+        },
+        {
+          "type": "ident",
+          "named": true
+        },
+        {
+          "type": "list_altern",
+          "named": true
+        },
+        {
+          "type": "list_case",
+          "named": true
+        },
+        {
+          "type": "list_exp",
+          "named": true
+        },
+        {
+          "type": "patt3",
+          "named": true
+        },
+        {
+          "type": "string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "exp5",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "exp5",
+          "named": true
+        },
+        {
+          "type": "exp6",
+          "named": true
+        },
+        {
+          "type": "label",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "exp6",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "double",
+          "named": true
+        },
+        {
+          "type": "exp",
+          "named": true
+        },
+        {
+          "type": "exps",
+          "named": true
+        },
+        {
+          "type": "ident",
+          "named": true
+        },
+        {
+          "type": "integer",
+          "named": true
+        },
+        {
+          "type": "list_loc_def",
+          "named": true
+        },
+        {
+          "type": "list_tuple_comp",
+          "named": true
+        },
+        {
+          "type": "sort",
+          "named": true
+        },
+        {
+          "type": "string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "exps",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "exp6",
+          "named": true
+        },
+        {
+          "type": "exps",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "flag_def",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "double",
+          "named": true
+        },
+        {
+          "type": "ident",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "fun_def",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "exp",
+          "named": true
+        },
+        {
+          "type": "list_ident",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "included",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "mi_except",
+          "named": true
+        },
+        {
+          "type": "mi_only",
+          "named": true
+        },
+        {
+          "type": "module_name",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "inst",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "module_name",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "integer",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "label",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "ident",
+          "named": true
+        },
+        {
+          "type": "integer",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "lhs_ident",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "ident",
+          "named": true
+        },
+        {
+          "type": "sort",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "lhs_name",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "lhs_ident",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "lhs_names",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "lhs_name",
+          "named": true
+        },
+        {
+          "type": "lhs_names",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "lin_def",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "exp",
+          "named": true
+        },
+        {
+          "type": "lhs_name",
+          "named": true
+        },
+        {
+          "type": "lhs_names",
+          "named": true
+        },
+        {
+          "type": "list_arg",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "list_altern",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "altern",
+          "named": true
+        },
+        {
+          "type": "list_altern",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "list_arg",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "arg",
+          "named": true
+        },
+        {
+          "type": "list_arg",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "list_bind",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "bind",
+          "named": true
+        },
+        {
+          "type": "list_bind",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "list_case",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "case",
+          "named": true
+        },
+        {
+          "type": "list_case",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "list_cat_def",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "cat_def",
+          "named": true
+        },
+        {
+          "type": "list_cat_def",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "list_cf_rule",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "cf_rule",
+          "named": true
+        },
+        {
+          "type": "list_cf_rule",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "list_cf_symbol",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "cf_symbol",
+          "named": true
+        },
+        {
+          "type": "list_cf_symbol",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "list_cfrhs",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "list_cfrhs",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "list_d_decl",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "d_decl",
+          "named": true
+        },
+        {
+          "type": "list_d_decl",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "list_data_constr",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "ident",
+          "named": true
+        },
+        {
+          "type": "list_data_constr",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "list_data_def",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "data_def",
+          "named": true
+        },
+        {
+          "type": "list_data_def",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "list_def_def",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "def_def",
+          "named": true
+        },
+        {
+          "type": "list_def_def",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "list_ebnf_rule",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "ebnf_rule",
+          "named": true
+        },
+        {
+          "type": "list_ebnf_rule",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "list_exp",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "exp",
+          "named": true
+        },
+        {
+          "type": "list_exp",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "list_flag_def",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "flag_def",
+          "named": true
+        },
+        {
+          "type": "list_flag_def",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "list_fun_def",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "fun_def",
+          "named": true
+        },
+        {
+          "type": "list_fun_def",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "list_ident",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "ident",
+          "named": true
+        },
+        {
+          "type": "list_ident",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "list_ident2",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "ident",
+          "named": true
+        },
+        {
+          "type": "list_ident2",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "list_included",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "included",
+          "named": true
+        },
+        {
+          "type": "list_included",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "list_inst",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "inst",
+          "named": true
+        },
+        {
+          "type": "list_inst",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "list_lin_def",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "lin_def",
+          "named": true
+        },
+        {
+          "type": "list_lin_def",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "list_loc_def",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "list_loc_def",
+          "named": true
+        },
+        {
+          "type": "loc_def",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "list_open",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "list_open",
+          "named": true
+        },
+        {
+          "type": "o_qualif",
+          "named": true
+        },
+        {
+          "type": "o_simple",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "list_oper_def",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "list_oper_def",
+          "named": true
+        },
+        {
+          "type": "oper_def",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "list_par_constr",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "list_par_constr",
+          "named": true
+        },
+        {
+          "type": "par_constr",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "list_param_def",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "list_param_def",
+          "named": true
+        },
+        {
+          "type": "param_def",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "list_patt",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "list_patt",
+          "named": true
+        },
+        {
+          "type": "patt_arg",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "list_patt_ass",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "list_patt_ass",
+          "named": true
+        },
+        {
+          "type": "patt_ass",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "list_patt_tuple_comp",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "list_patt_tuple_comp",
+          "named": true
+        },
+        {
+          "type": "patt",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "list_term_def",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "list_term_def",
+          "named": true
+        },
+        {
+          "type": "term_def",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "list_top_def",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "list_cat_def",
+          "named": true
+        },
+        {
+          "type": "list_data_def",
+          "named": true
+        },
+        {
+          "type": "list_def_def",
+          "named": true
+        },
+        {
+          "type": "list_flag_def",
+          "named": true
+        },
+        {
+          "type": "list_fun_def",
+          "named": true
+        },
+        {
+          "type": "list_lin_def",
+          "named": true
+        },
+        {
+          "type": "list_oper_def",
+          "named": true
+        },
+        {
+          "type": "list_param_def",
+          "named": true
+        },
+        {
+          "type": "list_term_def",
+          "named": true
+        },
+        {
+          "type": "list_top_def",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "list_tuple_comp",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "exp",
+          "named": true
+        },
+        {
+          "type": "list_tuple_comp",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "loc_def",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "exp",
+          "named": true
+        },
+        {
+          "type": "list_ident",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "mi_except",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "list_ident",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "mi_only",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "list_ident",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "mod_body",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "included",
+          "named": true
+        },
+        {
+          "type": "list_included",
+          "named": true
+        },
+        {
+          "type": "list_inst",
+          "named": true
+        },
+        {
+          "type": "mod_body",
+          "named": true
+        },
+        {
+          "type": "mod_content",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "mod_content",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "list_open",
+          "named": true
+        },
+        {
+          "type": "list_top_def",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "mod_def",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "compl_mod",
+          "named": true
+        },
+        {
+          "type": "mod_body",
+          "named": true
+        },
+        {
+          "type": "mt_abstract",
+          "named": true
+        },
+        {
+          "type": "mt_concrete",
+          "named": true
+        },
+        {
+          "type": "mt_instance",
+          "named": true
+        },
+        {
+          "type": "mt_interface",
+          "named": true
+        },
+        {
+          "type": "mt_resource",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "mod_header_body",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "included",
+          "named": true
+        },
+        {
+          "type": "list_included",
+          "named": true
+        },
+        {
+          "type": "list_inst",
+          "named": true
+        },
+        {
+          "type": "mod_open",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "mod_open",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "list_open",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "module_name",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "ident",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "mt_abstract",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "module_name",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "mt_concrete",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "module_name",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "mt_instance",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "module_name",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "mt_interface",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "module_name",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "mt_resource",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "module_name",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "o_qualif",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "module_name",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "o_simple",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "module_name",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "oper_def",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "exp",
+          "named": true
+        },
+        {
+          "type": "lhs_name",
+          "named": true
+        },
+        {
+          "type": "lhs_names",
+          "named": true
+        },
+        {
+          "type": "list_arg",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "par_constr",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "ident",
+          "named": true
+        },
+        {
+          "type": "list_d_decl",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "param_def",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "lhs_ident",
+          "named": true
+        },
+        {
+          "type": "list_par_constr",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "patt",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "patt",
+          "named": true
+        },
+        {
+          "type": "patt1",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "patt1",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "ident",
+          "named": true
+        },
+        {
+          "type": "list_patt",
+          "named": true
+        },
+        {
+          "type": "module_name",
+          "named": true
+        },
+        {
+          "type": "patt2",
+          "named": true
+        },
+        {
+          "type": "patt3",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "patt2",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "exp6",
+          "named": true
+        },
+        {
+          "type": "ident",
+          "named": true
+        },
+        {
+          "type": "patt3",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "patt3",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "double",
+          "named": true
+        },
+        {
+          "type": "ident",
+          "named": true
+        },
+        {
+          "type": "integer",
+          "named": true
+        },
+        {
+          "type": "list_patt_ass",
+          "named": true
+        },
+        {
+          "type": "list_patt_tuple_comp",
+          "named": true
+        },
+        {
+          "type": "module_name",
+          "named": true
+        },
+        {
+          "type": "patt",
+          "named": true
+        },
+        {
+          "type": "string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "patt_arg",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "patt",
+          "named": true
+        },
+        {
+          "type": "patt2",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "patt_ass",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "list_ident",
+          "named": true
+        },
+        {
+          "type": "patt",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "sort",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "source_file",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "mod_def",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "term_def",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "exp",
+          "named": true
+        },
+        {
+          "type": "lhs_names",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "!",
+    "named": false
+  },
+  {
+    "type": "#",
+    "named": false
+  },
+  {
+    "type": "$",
+    "named": false
+  },
+  {
+    "type": "(",
+    "named": false
+  },
+  {
+    "type": "(#\n",
+    "named": false
+  },
+  {
+    "type": "(# ",
+    "named": false
+  },
+  {
+    "type": ")",
+    "named": false
+  },
+  {
+    "type": "*",
+    "named": false
+  },
+  {
+    "type": "**",
+    "named": false
+  },
+  {
+    "type": "+",
+    "named": false
+  },
+  {
+    "type": "++",
+    "named": false
+  },
+  {
+    "type": ",",
+    "named": false
+  },
+  {
+    "type": "-",
+    "named": false
+  },
+  {
+    "type": "->",
+    "named": false
+  },
+  {
+    "type": ".",
+    "named": false
+  },
+  {
+    "type": "/",
+    "named": false
+  },
+  {
+    "type": ":",
+    "named": false
+  },
+  {
+    "type": "::",
+    "named": false
+  },
+  {
+    "type": "::=",
+    "named": false
+  },
+  {
+    "type": ";",
+    "named": false
+  },
+  {
+    "type": "<",
+    "named": false
+  },
+  {
+    "type": "<-",
+    "named": false
+  },
+  {
+    "type": "=",
+    "named": false
+  },
+  {
+    "type": "=>",
+    "named": false
+  },
+  {
+    "type": ">",
+    "named": false
+  },
+  {
+    "type": "?",
+    "named": false
+  },
+  {
+    "type": "@",
+    "named": false
+  },
+  {
+    "type": "PType",
+    "named": false
+  },
+  {
+    "type": "Str",
+    "named": false
+  },
+  {
+    "type": "Strs",
+    "named": false
+  },
+  {
+    "type": "Tok",
+    "named": false
+  },
+  {
+    "type": "Type",
+    "named": false
+  },
+  {
+    "type": "[",
+    "named": false
+  },
+  {
+    "type": "\\",
+    "named": false
+  },
+  {
+    "type": "\\\\",
+    "named": false
+  },
+  {
+    "type": "]",
+    "named": false
+  },
+  {
+    "type": "_",
+    "named": false
+  },
+  {
+    "type": "abstract",
+    "named": false
+  },
+  {
+    "type": "case",
+    "named": false
+  },
+  {
+    "type": "cat",
+    "named": false
+  },
+  {
+    "type": "char",
+    "named": true
+  },
+  {
+    "type": "coercions",
+    "named": false
+  },
+  {
+    "type": "concrete",
+    "named": false
+  },
+  {
+    "type": "data",
+    "named": false
+  },
+  {
+    "type": "def",
+    "named": false
+  },
+  {
+    "type": "flags",
+    "named": false
+  },
+  {
+    "type": "float",
+    "named": true
+  },
+  {
+    "type": "fun",
+    "named": false
+  },
+  {
+    "type": "ident",
+    "named": true
+  },
+  {
+    "type": "in",
+    "named": false
+  },
+  {
+    "type": "instance",
+    "named": false
+  },
+  {
+    "type": "interface",
+    "named": false
+  },
+  {
+    "type": "let",
+    "named": false
+  },
+  {
+    "type": "lin",
+    "named": false
+  },
+  {
+    "type": "lincat",
+    "named": false
+  },
+  {
+    "type": "lindef",
+    "named": false
+  },
+  {
+    "type": "linref",
+    "named": false
+  },
+  {
+    "type": "ms_complete",
+    "named": true
+  },
+  {
+    "type": "ms_incomplete",
+    "named": true
+  },
+  {
+    "type": "non_empty",
+    "named": true
+  },
+  {
+    "type": "of",
+    "named": false
+  },
+  {
+    "type": "open",
+    "named": false
+  },
+  {
+    "type": "oper",
+    "named": false
+  },
+  {
+    "type": "param",
+    "named": false
+  },
+  {
+    "type": "pattern",
+    "named": false
+  },
+  {
+    "type": "pre",
+    "named": false
+  },
+  {
+    "type": "printname",
+    "named": false
+  },
+  {
+    "type": "resource",
+    "named": false
+  },
+  {
+    "type": "separator",
+    "named": false
+  },
+  {
+    "type": "string",
+    "named": true
+  },
+  {
+    "type": "strs",
+    "named": false
+  },
+  {
+    "type": "table",
+    "named": false
+  },
+  {
+    "type": "terminator",
+    "named": false
+  },
+  {
+    "type": "variants",
+    "named": false
+  },
+  {
+    "type": "where",
+    "named": false
+  },
+  {
+    "type": "with",
+    "named": false
+  },
+  {
+    "type": "{",
+    "named": false
+  },
+  {
+    "type": "|",
+    "named": false
+  },
+  {
+    "type": "}",
+    "named": false
+  },
+  {
+    "type": "~",
+    "named": false
+  },
+  {
+    "type": "←",
+    "named": false
+  },
+  {
+    "type": "→",
+    "named": false
+  },
+  {
+    "type": "⇒",
+    "named": false
+  },
+  {
+    "type": "∷",
+    "named": false
+  }
+]

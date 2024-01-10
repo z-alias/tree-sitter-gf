@@ -1,0 +1,19 @@
+{
+  "name": "tree-sitter-gf",
+  "version": "1.0.0",
+  "description": "A tree-sitter parser for Grammatical Framework",
+  "main": "bindings/node",
+  "repository": "github:z-alias/tree-sitter-gf",
+  "author": "z-alias",
+  "license": "MIT",
+  "keywords": [
+    "parser",
+    "grammatical-framework"
+  ],
+  "dependencies": {
+    "nan": "^2.18.0"
+  },
+  "devDependencies": {
+    "tree-sitter-cli": "^0.20.8"
+  }
+}
