@@ -2380,136 +2380,333 @@
   {
     "type": "loc_def",
     "named": true,
-    "fields": {},
-    "children": {
-      "multiple": true,
-      "required": true,
-      "types": [
-        {
-          "type": "list_ident",
-          "named": true
-        },
-        {
-          "type": "term_abs",
-          "named": true
-        },
-        {
-          "type": "term_alts",
-          "named": true
-        },
-        {
-          "type": "term_app",
-          "named": true
-        },
-        {
-          "type": "term_c",
-          "named": true
-        },
-        {
-          "type": "term_c_table",
-          "named": true
-        },
-        {
-          "type": "term_e_float",
-          "named": true
-        },
-        {
-          "type": "term_e_int",
-          "named": true
-        },
-        {
-          "type": "term_e_lin",
-          "named": true
-        },
-        {
-          "type": "term_e_lincat",
-          "named": true
-        },
-        {
-          "type": "term_e_patt",
-          "named": true
-        },
-        {
-          "type": "term_e_patt_type",
-          "named": true
-        },
-        {
-          "type": "term_empty",
-          "named": true
-        },
-        {
-          "type": "term_example",
-          "named": true
-        },
-        {
-          "type": "term_fv",
-          "named": true
-        },
-        {
-          "type": "term_glue",
-          "named": true
-        },
-        {
-          "type": "term_k",
-          "named": true
-        },
-        {
-          "type": "term_let",
-          "named": true
-        },
-        {
-          "type": "term_meta",
-          "named": true
-        },
-        {
-          "type": "term_p",
-          "named": true
-        },
-        {
-          "type": "term_prod",
-          "named": true
-        },
-        {
-          "type": "term_r",
-          "named": true
-        },
-        {
-          "type": "term_rec_type",
-          "named": true
-        },
-        {
-          "type": "term_s",
-          "named": true
-        },
-        {
-          "type": "term_sort",
-          "named": true
-        },
-        {
-          "type": "term_strs",
-          "named": true
-        },
-        {
-          "type": "term_t",
-          "named": true
-        },
-        {
-          "type": "term_table",
-          "named": true
-        },
-        {
-          "type": "term_typed",
-          "named": true
-        },
-        {
-          "type": "term_v",
-          "named": true
-        },
-        {
-          "type": "term_vr",
-          "named": true
-        }
-      ]
+    "fields": {
+      "name": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "list_ident",
+            "named": true
+          }
+        ]
+      },
+      "type": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": "(",
+            "named": false
+          },
+          {
+            "type": ")",
+            "named": false
+          },
+          {
+            "type": "<",
+            "named": false
+          },
+          {
+            "type": ">",
+            "named": false
+          },
+          {
+            "type": "[",
+            "named": false
+          },
+          {
+            "type": "]",
+            "named": false
+          },
+          {
+            "type": "term_abs",
+            "named": true
+          },
+          {
+            "type": "term_alts",
+            "named": true
+          },
+          {
+            "type": "term_app",
+            "named": true
+          },
+          {
+            "type": "term_c",
+            "named": true
+          },
+          {
+            "type": "term_c_table",
+            "named": true
+          },
+          {
+            "type": "term_e_float",
+            "named": true
+          },
+          {
+            "type": "term_e_int",
+            "named": true
+          },
+          {
+            "type": "term_e_lin",
+            "named": true
+          },
+          {
+            "type": "term_e_lincat",
+            "named": true
+          },
+          {
+            "type": "term_e_patt",
+            "named": true
+          },
+          {
+            "type": "term_e_patt_type",
+            "named": true
+          },
+          {
+            "type": "term_empty",
+            "named": true
+          },
+          {
+            "type": "term_example",
+            "named": true
+          },
+          {
+            "type": "term_fv",
+            "named": true
+          },
+          {
+            "type": "term_glue",
+            "named": true
+          },
+          {
+            "type": "term_k",
+            "named": true
+          },
+          {
+            "type": "term_let",
+            "named": true
+          },
+          {
+            "type": "term_meta",
+            "named": true
+          },
+          {
+            "type": "term_p",
+            "named": true
+          },
+          {
+            "type": "term_prod",
+            "named": true
+          },
+          {
+            "type": "term_r",
+            "named": true
+          },
+          {
+            "type": "term_rec_type",
+            "named": true
+          },
+          {
+            "type": "term_s",
+            "named": true
+          },
+          {
+            "type": "term_sort",
+            "named": true
+          },
+          {
+            "type": "term_strs",
+            "named": true
+          },
+          {
+            "type": "term_t",
+            "named": true
+          },
+          {
+            "type": "term_table",
+            "named": true
+          },
+          {
+            "type": "term_typed",
+            "named": true
+          },
+          {
+            "type": "term_v",
+            "named": true
+          },
+          {
+            "type": "term_vr",
+            "named": true
+          },
+          {
+            "type": "{",
+            "named": false
+          },
+          {
+            "type": "}",
+            "named": false
+          }
+        ]
+      },
+      "value": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": "(",
+            "named": false
+          },
+          {
+            "type": ")",
+            "named": false
+          },
+          {
+            "type": "<",
+            "named": false
+          },
+          {
+            "type": ">",
+            "named": false
+          },
+          {
+            "type": "[",
+            "named": false
+          },
+          {
+            "type": "]",
+            "named": false
+          },
+          {
+            "type": "term_abs",
+            "named": true
+          },
+          {
+            "type": "term_alts",
+            "named": true
+          },
+          {
+            "type": "term_app",
+            "named": true
+          },
+          {
+            "type": "term_c",
+            "named": true
+          },
+          {
+            "type": "term_c_table",
+            "named": true
+          },
+          {
+            "type": "term_e_float",
+            "named": true
+          },
+          {
+            "type": "term_e_int",
+            "named": true
+          },
+          {
+            "type": "term_e_lin",
+            "named": true
+          },
+          {
+            "type": "term_e_lincat",
+            "named": true
+          },
+          {
+            "type": "term_e_patt",
+            "named": true
+          },
+          {
+            "type": "term_e_patt_type",
+            "named": true
+          },
+          {
+            "type": "term_empty",
+            "named": true
+          },
+          {
+            "type": "term_example",
+            "named": true
+          },
+          {
+            "type": "term_fv",
+            "named": true
+          },
+          {
+            "type": "term_glue",
+            "named": true
+          },
+          {
+            "type": "term_k",
+            "named": true
+          },
+          {
+            "type": "term_let",
+            "named": true
+          },
+          {
+            "type": "term_meta",
+            "named": true
+          },
+          {
+            "type": "term_p",
+            "named": true
+          },
+          {
+            "type": "term_prod",
+            "named": true
+          },
+          {
+            "type": "term_r",
+            "named": true
+          },
+          {
+            "type": "term_rec_type",
+            "named": true
+          },
+          {
+            "type": "term_s",
+            "named": true
+          },
+          {
+            "type": "term_sort",
+            "named": true
+          },
+          {
+            "type": "term_strs",
+            "named": true
+          },
+          {
+            "type": "term_t",
+            "named": true
+          },
+          {
+            "type": "term_table",
+            "named": true
+          },
+          {
+            "type": "term_typed",
+            "named": true
+          },
+          {
+            "type": "term_v",
+            "named": true
+          },
+          {
+            "type": "term_vr",
+            "named": true
+          },
+          {
+            "type": "{",
+            "named": false
+          },
+          {
+            "type": "}",
+            "named": false
+          }
+        ]
+      }
     }
   },
   {

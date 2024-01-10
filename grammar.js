@@ -192,9 +192,9 @@ module.exports = grammar({
     lhs_names: $ => seq($.lhs_name, optional(seq(',', $.lhs_names))),
 
     loc_def: $ => choice(
-      seq($.list_ident, ':', $._exp),
-      seq($.list_ident, '=', $._exp),
-      seq($.list_ident, ':', $._exp, '=', $._exp)
+      seq(field('name', $.list_ident), ':', field('type', $._exp)),
+      seq(field('name', $.list_ident), '=', field('value', $._exp)),
+      seq(field('name', $.list_ident), ':', field('type', $._exp), '=', field('value', $._exp))
     ),
 
     list_loc_def: $ => seq($.loc_def, optional(seq(';', optional($.list_loc_def)))),
